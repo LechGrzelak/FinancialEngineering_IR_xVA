@@ -1,5 +1,5 @@
 # Financial Engineering Course
-Here you will find materials for the course of Computational Finance
+Here you will find materials for the course of "Financial Engineering: Interest rates & xVA"
 
 YouTube lectures you can find at:
 https://www.youtube.com/ComputationsInFinance
