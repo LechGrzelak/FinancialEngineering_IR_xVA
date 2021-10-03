@@ -119,7 +119,7 @@ def mainCalculation():
             
             J = Paths["J"]
 
-            resultCondExp[i]=CallOption_CondExpectation(NoOfPaths,T,S0,K,J,r)
+            resultCondExp[i]=CallOption_CondExpectation(N,T,S0,K,J,r)
     
     plt.figure(3)
     plt.plot(NGrid,resultMC)  
