@@ -107,9 +107,9 @@ def HW_B(lambd,eta,T1,T2):
     return 1.0/lambd *(np.exp(-lambd*(T2-T1))-1.0)
 
 def HW2F_ZCB(lambd1,lambd2,eta1,eta2,rho,P0T,T1,T2,xT1,yT1):
-    V = lambda t,T: (eta1**2.0)/(lambd1**2.0)*((T2-T1)+2.0/lambd1*np.exp(-lambd1*(T2-T1))-1.0/(2.0*lambd1)*np.exp(-2.0*lambd1*(T2-T1))-3.0/(2.0*lambd1))+\
-                   +(eta2**2.0)/(lambd2**2.0)*((T2-T1)+2.0/lambd2*np.exp(-lambd2*(T2-T1))-1.0/(2.0*lambd2)*np.exp(-2.0*lambd2*(T2-T1))-3.0/(2.0*lambd2))+\
-            + 2.0*rho*eta1*eta2/(lambd1*lambd2)*(T2-T1 + 1.0/lambd1*(np.exp(-lambd1*(T2-T1))-1.0)+ 1.0/lambd2*(np.exp(-lambd2*(T2-T1))-1.0) - 1.0/(lambd1+lambd2)*(np.exp(-(lambd1+lambd2)*(T2-T1))-1.0))
+    V = lambda t,T: (eta1**2.0)/(lambd1**2.0)*((T-t)+2.0/lambd1*np.exp(-lambd1*(T-t))-1.0/(2.0*lambd1)*np.exp(-2.0*lambd1*(T-t))-3.0/(2.0*lambd1))+\
+                   +(eta2**2.0)/(lambd2**2.0)*((T-t)+2.0/lambd2*np.exp(-lambd2*(T-t))-1.0/(2.0*lambd2)*np.exp(-2.0*lambd2*(T-t))-3.0/(2.0*lambd2))+\
+            + 2.0*rho*eta1*eta2/(lambd1*lambd2)*(T-t + 1.0/lambd1*(np.exp(-lambd1*(T-t))-1.0)+ 1.0/lambd2*(np.exp(-lambd2*(T-t))-1.0) - 1.0/(lambd1+lambd2)*(np.exp(-(lambd1+lambd2)*(T-t))-1.0))
             
     intPhi = - np.log(P0T(T2)/P0T(T1)*np.exp(-0.5*(V(0,T2)-V(0,T1))))        
     
